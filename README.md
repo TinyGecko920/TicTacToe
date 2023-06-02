@@ -1,4 +1,2 @@
 # TicTacToe
-Python Pygame TicTacToe
-
-![TicTacToe](screenshot/1.jpg "TicTacToe")
+but with cows and sharks
