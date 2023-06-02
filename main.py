@@ -12,9 +12,9 @@ CELL_CENTER = vec2(CELL_SIZE / 2)
 class TicTacToe:
     def __init__(self, game):
         self.game = game
-        self.field_image = self.get_scaled_image(path='resources/field.png', res=[WIN_SIZE] * 2)
-        self.O_image = self.get_scaled_image(path='resources/o.png', res=[CELL_SIZE] * 2)
-        self.X_image = self.get_scaled_image(path='resources/x.png', res=[CELL_SIZE] * 2)
+        self.field_image = self.get_scaled_image(path='resources/background.png', res=[WIN_SIZE] * 2)
+        self.O_image = self.get_scaled_image(path='resources/shark.png', res=[CELL_SIZE] * 2)
+        self.X_image = self.get_scaled_image(path='resources/cow.png', res=[CELL_SIZE] * 2)
 
         self.game_array = [[INF, INF, INF],
                            [INF, INF, INF],
@@ -75,7 +75,7 @@ class TicTacToe:
         return pg.transform.smoothscale(img, res)
 
     def print_caption(self):
-        pg.display.set_caption(f'Player "{"OX"[self.player]}" turn!')
+        pg.display.set_caption(f'Player "{"OX"[self.player]}"s turn!')
         if self.winner:
             pg.display.set_caption(f'Player "{self.winner}" wins! Press Space to Restart')
         elif self.game_steps == 9:
@@ -90,7 +90,7 @@ class TicTacToe:
 class Game:
     def __init__(self):
         pg.init()
-        self.screen = pg.display.set_mode([WIN_SIZE] * 2)
+        self.screen = pg.display.set_mode([WIN_SIZE] * 2, pg.RESIZABLE)
         self.clock = pg.time.Clock()
         self.tic_tac_toe = TicTacToe(self)
 
